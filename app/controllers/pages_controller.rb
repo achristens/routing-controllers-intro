@@ -12,8 +12,8 @@ class PagesController < ApplicationController
 
   def contest
     @header = "LET'S WIN SOME STUFF"
-    flash[:notice] = "Sorry, the contest has ended!"
-    redirect_to "/welcome"
+    flash[:notice] = "Sorry, the contest has ended! Enjoy this kitty instead."
+    redirect_to kitten_url(400)
   end
 
   def kitten
@@ -31,8 +31,8 @@ class PagesController < ApplicationController
     if
       params[:magic_word] == "merino"
     else
-      flash[:alert] = "That is not the correct magic word..."
-      redirect_to "/welcome"
+      flash[:alert] = "That is not the correct magic word. Stare into these kitties eyes and think harder..."
+      redirect_to kitties_path(100)
     end
   end
 end
